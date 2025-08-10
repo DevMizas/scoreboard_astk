@@ -10,7 +10,6 @@ class Timer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width / 1200;
-    final double height = MediaQuery.of(context).size.height / 778;
 
     String formatTime(Duration duration) {
       final minutes = duration.inMinutes.toString().padLeft(1, '0');
@@ -21,7 +20,6 @@ class Timer extends StatelessWidget {
     return Container(
       width: 260 * width,
       height: 195 * width,
-      margin: EdgeInsets.only(top: 150 * height),
       padding: EdgeInsets.only(bottom: 16),
       alignment: Alignment.center,
       decoration: BoxDecoration(

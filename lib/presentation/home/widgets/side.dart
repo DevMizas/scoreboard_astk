@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:placar_astk/core/core.dart';
 import 'package:placar_astk/presentation/presentation.dart';
 
 class Side extends StatelessWidget {
+  final InfractionsViewModel c1VM = InfractionsViewModel();
+  final InfractionsViewModel c2VM = InfractionsViewModel();
+
   final Color backgroudColor;
   final String score;
+  final bool isBlueSide;
   final Function() addButton;
   final Function() removedButton;
 
@@ -11,6 +16,7 @@ class Side extends StatelessWidget {
     super.key,
     required this.backgroudColor,
     required this.score,
+    required this.isBlueSide,
     required this.addButton,
     required this.removedButton,
   });
@@ -53,8 +59,22 @@ class Side extends StatelessWidget {
                 backgroudColor: backgroudColor,
               ),
             ),
-            Infractions(title: "C1"),
-            Infractions(title: "C2"),
+            Infractions(
+              title: "C1",
+              infractionsVM: getIt<InfractionsViewModel>(
+                instanceName: isBlueSide ? "blueC1" : "redC1",
+              ),
+              isBlueSide: isBlueSide,
+            ),
+            SizedBox(height: 10),
+            Infractions(
+              title: "C2",
+              infractionsVM: getIt<InfractionsViewModel>(
+                instanceName: isBlueSide ? "blueC2" : "redC2",
+              ),
+              isBlueSide: isBlueSide,
+            ),
+            SizedBox(height: 10),
           ],
         ),
       ),
