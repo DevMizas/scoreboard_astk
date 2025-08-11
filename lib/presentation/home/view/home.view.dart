@@ -32,6 +32,20 @@ class HomeView extends StatelessWidget {
               ),
               //=======  Timer
               Align(alignment: Alignment.center, child: Timer()),
+              //=======  Menu
+              Container(
+                height: 20,
+                width: 30,
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                  border: Border.all(color: Colors.blue.shade400),
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(10),
+                    bottomRight: Radius.circular(10),
+                  ),
+                ),
+                child: Icon(Icons.keyboard_arrow_down_rounded, size: 20,),
+              ),
             ],
           );
         },
