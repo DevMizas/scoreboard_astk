@@ -20,6 +20,22 @@ abstract class _HomeViewModelBase with Store {
   @observable
   int scoreToRed = 0;
 
+  @observable
+  bool redFirstPoint = false;
+
+  @observable
+  bool blueFirstPoint = false;
+
+  @action
+  void setRedFirstPoint({required bool value}) {
+    redFirstPoint = value;
+  }
+
+  @action
+  void setBlueFirstPoint({required bool value}) {
+    blueFirstPoint = value;
+  }
+
   @action
   void addPointToBlue() {
     scoreToBlue++;
@@ -76,5 +92,7 @@ abstract class _HomeViewModelBase with Store {
     scoreToBlue = 0;
     scoreToRed = 0;
     remainingTime = Duration(minutes: 2);
+    redFirstPoint = false;
+    blueFirstPoint = false;
   }
 }
