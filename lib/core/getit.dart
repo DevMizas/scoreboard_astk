@@ -12,4 +12,5 @@ void getItService() {
   getIt.registerSingleton<InfractionsViewModel>(InfractionsViewModel(), instanceName: "redC1");
   getIt.registerSingleton<InfractionsViewModel>(InfractionsViewModel(), instanceName: "redC2");
   getIt.registerSingleton<MenuViewModel>(MenuViewModel());
+  getIt.registerSingleton<KumiteViewModel>(KumiteViewModel());
 }

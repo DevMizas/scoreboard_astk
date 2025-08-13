@@ -1,0 +1,4 @@
+enum HomePageEnum {
+  kumite,
+  kata,
+}

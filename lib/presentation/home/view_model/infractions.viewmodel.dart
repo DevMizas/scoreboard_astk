@@ -22,25 +22,25 @@ abstract class _InfractionsViewModelBase with Store {
 
   @action
   void addInfraction({required bool isBlueSide}) {
-    final homeVM = GetIt.I<HomeViewModel>();
+    final kumiteVM = GetIt.I<KumiteViewModel>();
     if (currentCount < infractionsList.length) {
       currentCount++;
 
       if (currentCount == 2) {
         if (!isBlueSide) {
-          homeVM.addPointToBlue();
+          kumiteVM.addPointToBlue();
         } else {
-          homeVM.addPointToRed();
+          kumiteVM.addPointToRed();
         }
       }
 
       if (currentCount == 3) {
         if (!isBlueSide) {
-          homeVM.addPointToBlue();
-          homeVM.addPointToBlue();
+          kumiteVM.addPointToBlue();
+          kumiteVM.addPointToBlue();
         } else {
-          homeVM.addPointToRed();
-          homeVM.addPointToRed();
+          kumiteVM.addPointToRed();
+          kumiteVM.addPointToRed();
         }
       }
     }
@@ -48,25 +48,25 @@ abstract class _InfractionsViewModelBase with Store {
 
   @action
   void removeInfraction({required bool isBlueSide}) {
-    final homeVM = GetIt.I<HomeViewModel>();
+    final kumiteVM = GetIt.I<KumiteViewModel>();
     if (currentCount > 0) {
       currentCount--;
 
       if (currentCount == 1) {
         if (!isBlueSide) {
-          homeVM.removePointToBlue();
+          kumiteVM.removePointToBlue();
         } else {
-          homeVM.removePointToRed();
+          kumiteVM.removePointToRed();
         }
       }
 
       if (currentCount == 2) {
         if (!isBlueSide) {
-          homeVM.removePointToBlue();
-          homeVM.removePointToBlue();
+          kumiteVM.removePointToBlue();
+          kumiteVM.removePointToBlue();
         } else {
-          homeVM.removePointToRed();
-          homeVM.removePointToRed();
+          kumiteVM.removePointToRed();
+          kumiteVM.removePointToRed();
         }
       }
     }

@@ -3,9 +3,9 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get_it/get_it.dart';
 import 'package:placar_astk/presentation/presentation.dart';
 
-class Timer extends StatelessWidget {
-  final homeVM = GetIt.I.get<HomeViewModel>();
-  Timer({super.key});
+class TimerScoreboard extends StatelessWidget {
+  final kumiteVM = GetIt.I.get<KumiteViewModel>();
+  TimerScoreboard({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,9 +31,9 @@ class Timer extends StatelessWidget {
         children: [
           Observer(
             builder: (_) => InkWell(
-              onTap: homeVM.toggleTimer,
+              onTap: kumiteVM.toggleTimer,
               child: Text(
-                formatTime(homeVM.remainingTime),
+                formatTime(kumiteVM.remainingTime),
                 style: TextStyle(
                   fontSize: 100 * width,
                   fontWeight: FontWeight.w600,
